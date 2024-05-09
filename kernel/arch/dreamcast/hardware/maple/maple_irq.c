@@ -111,6 +111,13 @@ static void vbl_autodet_callback(maple_state_t *state, maple_frame_t *frm) {
     maple_device_t      *dev;
     int         p, u;
 
+    if (irq_inside_int() && !malloc_irq_safe()) {
+        /* We can't create or remove a device now. Fail silently as the device
+         * will be re-probed in the next loop of the periodic IRQ. */
+        maple_frame_unlock(frm);
+        return;
+    }
+
     /* So.. did we get a response? */
     resp = (maple_response_t *)frm->recv_buf;
     p = frm->dst_port;
