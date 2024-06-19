@@ -167,6 +167,29 @@ int mutex_destroy(mutex_t *m);
 */
 int mutex_lock(mutex_t *m);
 
+/** \brief  Lock a mutex.
+
+    This function will lock a mutex, if it is not already locked by another
+    thread. If it is locked by another thread already, this function will block
+    until the mutex has been acquired for the calling thread.
+    This function can be called from within an interrupt context. In that case,
+    if the mutex is already locked, an error will be returned.
+
+    The semantics of this function depend on the type of mutex that is used.
+
+    \param  m               The mutex to acquire
+    \retval 0               On success
+    \retval -1              On error, sets errno as appropriate
+
+    \par    Error Conditions:
+    \em     EINVAL - the mutex has not been initialized properly \n
+    \em     EAGAIN - lock has been acquired too many times (recursive), or the
+                     function was called inside an interrupt and the mutex was
+                     already locked \n
+    \em     EDEADLK - would deadlock (error-checking)
+*/
+int mutex_lock_irqsafe(mutex_t *m);
+
 /** \brief  Lock a mutex (with a timeout).
 
     This function will attempt to lock a mutex. If the lock can be acquired
