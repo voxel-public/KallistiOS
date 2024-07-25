@@ -32,7 +32,7 @@
     or until you unmount them with fs_romdisk_unmount(). The size of your generated
     ROMFS image must be kept below 16MB, with 14MB being the maximum recommended size, 
     as your binary will also reside in RAM and you need to leave some memory available
-    for it. Generating filles larger than the available RAM will lead to system crashes.
+    for it. Generating files larger than the available RAM will lead to system crashes.
 
     \see INIT_FS_ROMDISK()
     \see KOS_INIT_FLAGS()
