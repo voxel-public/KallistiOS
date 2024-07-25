@@ -34,7 +34,7 @@
     as your binary will also reside in RAM and you need to leave some memory available
     for it. Generating files larger than the available RAM will lead to system crashes.
 
-    \see INIT_FS_ROMDISK()
+    \see INIT_FS_ROMDISK
     \see KOS_INIT_FLAGS()
 
     \author Megan Potter
