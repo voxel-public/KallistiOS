@@ -36,8 +36,8 @@
     
     A romdisk filesystem image can be created by adding "KOS_ROMDISK_DIR=" to your Makefile
     and pointing it to the directory contaning all the resources you wish to have embeded in
-    filesystem image. A rule to create the image is provided in the rules provided in Makefile.rules.
-    The created object file can be linked with your binary file by adding romdisk.o to your
+    filesystem image. A rule to create the image is provided in the rules provided in Makefile.rules,
+    the created object file must be linked with your binary file by adding romdisk.o to your 
     list of objects.
     
     \see INIT_FS_ROMDISK
