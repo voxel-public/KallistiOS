@@ -33,7 +33,13 @@
     ROMFS image must be kept below 16MB, with 14MB being the maximum recommended size, 
     as your binary will also reside in RAM and you need to leave some memory available
     for it. Generating files larger than the available RAM will lead to system crashes.
-
+    
+    A romdisk filesystem image can be created by adding "KOS_ROMDISK_DIR=" to your Makefile
+    and pointing it to the directory contaning all the resources you wish to have embeded in
+    filesystem image. A rule to create the image is provided in the rules provided in Makefile.rules.
+    The created object file can be linked with your binary file by adding romdisk.o to your
+    list of objects.
+    
     \see INIT_FS_ROMDISK
     \see KOS_INIT_FLAGS()
 
