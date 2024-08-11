@@ -16,7 +16,7 @@
 
     You can choose to automount one ROMFS image by embedding it into your binary
     and using the appropriate flags (INIT_DEFAULT by itself or INIT_FS_ROMDISK with other flags) when calling KOS_INIT_FLAGS().
-    when calling the INIT macro with a custom flag selection. The embedded ROMFS
+    when calling the KOS_INIT_FLAGS() macro with a custom flag selection. The embedded ROMFS
     will mount itself on /rd.
 
     \warning
