@@ -95,7 +95,7 @@ static uintptr_t pvr_dest_addr(uintptr_t dest, int type) {
     return dest_addr;
 }
 
-int pvr_dma_transfer(void *src, uintptr_t dest, size_t count, int type,
+int pvr_dma_transfer(const void *src, uintptr_t dest, size_t count, int type,
                      int block, pvr_dma_callback_t callback, void *cbdata) {
     uintptr_t src_addr = ((uintptr_t)src);
 

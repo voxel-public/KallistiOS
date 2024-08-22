@@ -20,7 +20,7 @@
 */
 
 /* Compile a polygon context into a polygon header */
-void pvr_poly_compile(pvr_poly_hdr_t *dst, pvr_poly_cxt_t *src) {
+void pvr_poly_compile(pvr_poly_hdr_t *dst, const pvr_poly_cxt_t *src) {
     int u, v;
     uint32  txr_base;
 
@@ -321,7 +321,7 @@ void pvr_sprite_cxt_txr(pvr_sprite_cxt_t *dst, pvr_list_t list,
     dst->txr.format = textureformat;
 }
 
-void pvr_sprite_compile(pvr_sprite_hdr_t *dst, pvr_sprite_cxt_t *src) {
+void pvr_sprite_compile(pvr_sprite_hdr_t *dst, const pvr_sprite_cxt_t *src) {
     int u, v;
     uint32 txr_base;
 
@@ -457,7 +457,7 @@ void pvr_mod_compile(pvr_mod_hdr_t *dst, pvr_list_t list, uint32 mode,
 
 /* Compile a polygon context into a polygon header that is affected by
    modifier volumes */
-void pvr_poly_mod_compile(pvr_poly_mod_hdr_t *dst, pvr_poly_cxt_t *src) {
+void pvr_poly_mod_compile(pvr_poly_mod_hdr_t *dst, const pvr_poly_cxt_t *src) {
     int u, v;
     uint32  txr_base;
 
