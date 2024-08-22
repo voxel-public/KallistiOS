@@ -1537,7 +1537,7 @@ int pvr_get_stats(pvr_stats_t *stat);
     like the old cheap "worm hole". 
 */
 
-/** \defgroup pvr_palfmts           Formats
+/** \defgroup pvr_palfmt            Formats
     \brief                          Color palette formats of the PowerVR
     \ingroup                        pvr_pal_mgmt
 
@@ -1546,10 +1546,12 @@ int pvr_get_stats(pvr_stats_t *stat);
 
     @{
 */
-#define PVR_PAL_ARGB1555    0   /**< \brief 16-bit ARGB1555 palette format */
-#define PVR_PAL_RGB565      1   /**< \brief 16-bit RGB565 palette format */
-#define PVR_PAL_ARGB4444    2   /**< \brief 16-bit ARGB4444 palette format */
-#define PVR_PAL_ARGB8888    3   /**< \brief 32-bit ARGB8888 palette format */
+typedef enum pvr_palfmt {
+    PVR_PAL_ARGB1555,        /**< \brief 16-bit ARGB1555 palette format */
+    PVR_PAL_RGB565,          /**< \brief 16-bit RGB565 palette format */
+    PVR_PAL_ARGB4444,        /**< \brief 16-bit ARGB4444 palette format */
+    PVR_PAL_ARGB8888,        /**< \brief 32-bit ARGB8888 palette format */
+} pvr_palfmt_t;
 /** @} */
 
 /** \brief   Set the palette format.
@@ -1564,9 +1566,9 @@ int pvr_get_stats(pvr_stats_t *stat);
     paletted textures with ARGB8888 entries in the palette.
 
     \param  fmt             The format to use
-    \see    pvr_palfmts
+    \see    pvr_palfmt_t
 */
-void pvr_set_pal_format(int fmt);
+void pvr_set_pal_format(pvr_palfmt_t fmt);
 
 /** \brief   Set a palette value.
     \ingroup pvr_pal_mgmt
