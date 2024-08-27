@@ -669,8 +669,10 @@ int g1_ata_read_lba_dma(uint64_t sector, size_t count, void *buf,
         return -1;
     }
 
-    /* Invalidate the dcache over the range of the data. */
-    dcache_inval_range((uint32)buf, count * 512);
+    if((addr >> 24) == 0x0C) {
+        /* Invalidate the dcache over the range of the data. */
+        dcache_inval_range((uint32)buf, count * 512);
+    }
 
     /* Lock the mutex. It will be unlocked later in the IRQ handler. */
     if(g1_ata_mutex_lock())
@@ -849,8 +851,10 @@ int g1_ata_write_lba_dma(uint64_t sector, size_t count, const void *buf,
         return -1;
     }
 
-    /* Flush the dcache over the range of the data. */
-    dcache_flush_range((uint32)buf, count * 512);
+    if((addr >> 24) == 0x0C) {
+        /* Flush the dcache over the range of the data. */
+        dcache_flush_range((uint32)buf, count * 512);
+    }
 
     /* Lock the mutex. It will be unlocked in the IRQ handler later. */
     if(g1_ata_mutex_lock())
