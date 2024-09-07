@@ -60,7 +60,7 @@ static uint8 logs[] = {
 };
 
 static inline uint8 calc_aica_vol(uint8 x) {
-    return logs[x & 0xff];
+    return logs[x];
 }
 
 static inline int calc_aica_pan(int x) {
