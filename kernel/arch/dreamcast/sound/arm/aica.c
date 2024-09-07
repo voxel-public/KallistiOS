@@ -40,7 +40,7 @@ void aica_init(void) {
             else
                 logs[i] = 16.0 * log2(255.0 / i);
    */
-static int logs[] = {
+static uint8 logs[] = {
     255, 127, 111, 102, 95, 90, 86, 82, 79, 77, 74, 72, 70, 68, 66, 65,
     63, 62, 61, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 50, 49, 48,
     47, 47, 46, 45, 45, 44, 43, 43, 42, 42, 41, 41, 40, 40, 39, 39,
@@ -59,7 +59,7 @@ static int logs[] = {
     1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 };
 
-static inline int calc_aica_vol(int x) {
+static inline uint8 calc_aica_vol(uint8 x) {
     return logs[x & 0xff];
 }
 
