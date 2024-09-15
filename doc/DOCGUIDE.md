@@ -18,7 +18,7 @@ KallistiOS uses Doxygen to generate documentation from the project's header file
 - timing.dox
 - video.dox
 
-All of them can be found the the doc folder.
+All of them can be found in the doc folder.
 
 #### Topics
 
@@ -34,7 +34,13 @@ Files, are (optional) units of documentation that exist under Topics. Doxygen ty
 
 Different levels of detail are provided in KallistiOS' documentation as a way to help the reader quickly find their way through the documentation and the OS. In order to achieve these two goals, documentation should be written with more detail as it gets closer to the File level.
 
-Topic level documentation should aim to inform the reader of what they will find inside it. A top level Topic description must state the API's purpose and hardware it might relate,
+Topic level documentation should aim to inform the reader of what they will find inside it. A top level Topic description must state the API's purpose and hardware it might relate to.
+
+Subtopics are the place to start providing more detailed insights into the API by describing its capabilities and limitations, providing function descriptions and alerting the reader to common pitfalls and known issues. Subtopics that aren't parents to other subtopics should also provide a basic guide into using the API, with a focus on any setup that is required to use it and its key functions.
+
+At the File level, the documentation should focus on describing the inner workings of a module as well as more advanced API usecases and data structures.
+
+#### Linking to Other Pages
 
 ---
 
