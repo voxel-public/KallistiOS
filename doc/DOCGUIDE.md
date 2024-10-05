@@ -57,7 +57,7 @@ the API, with a focus on any setup required to use it and its key
 functions.
 
 At the File level, the documentation should focus on describing the inner
-workings of a module as well as more advanced API usecases and data structures.
+workings of a module as well as more advanced API use cases and data structures.
 
 #### Linking to Other Pages
 
@@ -72,7 +72,7 @@ This will help readers reach important pages that might be of their interest.
 ### Where to Write What
 
 Documentation should be kept in the header files of KallistiOS, while the .dox
-files should be used to definegroups. As modern IDEs are capable of parsing
+files should be used to define groups. As modern IDEs are capable of parsing
 Doxygen style documentation, keeping the majority of the documentation inside
 header files can prove useful for users as they use KallistiOS' APIs.
 
