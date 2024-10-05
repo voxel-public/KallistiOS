@@ -62,7 +62,7 @@ workings of a module as well as more advanced API usecases and data structures.
 #### Linking to Other Pages
 
 When expanding the documentation, it is good practice to provide links to
-important functions or macros mentioned. If a Topic has any type of relatioship
+important functions or macros mentioned. If a Topic has any type of relationship
 with resources that belong to another Topic, Doxygen functionalities should be
 used to ensure that the page points to the mentioned resources. 
 This will help readers reach important pages that might be of their interest.
@@ -86,3 +86,22 @@ without requiring a reorganising of function definitions inside the headers.
 ---
 
 ### Style Guide
+
+When contributing to the docs (either with new documentation or updates to 
+existing docs), please make sure you follow this style guide so that everything 
+stays uniform across pages.
+
+#### Topic hierarchy
+
+Top level Topics are defined in their own text file in the `./doc/` folder; its in these files
+that their specific subtopics must be declared so that they can be referenced in the header files later.
+
+##### Functions
+
+When mentioned in the documentation, functions __must__ link back to their signatures. 
+
+##### See Also
+
+Relevant macros or pages should be included in this section, so the reader can quickly move to pages that
+can be of interest. Structs are also good candidates to this section, as it often isn't possible to cover
+all of the thought that went into the members, alignments, padding and packing.
