@@ -89,7 +89,13 @@ without requiring a reorganising of function definitions inside the headers.
 
 When contributing to the docs (either with new documentation or updates to 
 existing docs), please make sure you follow this style guide so that everything 
-stays uniform across pages.
+stays uniform across pages. 
+
+It is possible that chunks of code or documentation written in some header files
+belong on a different page than the one Doxygen is putting them on, but also contains
+information that, by virtue of providing IDEs information about the code, must not 
+be moved. In these cases, Doxygen's `\addtogroup` allows writers to move documentation
+blocks around, without changing the header file where it is written 
 
 #### Topic hierarchy
 
