@@ -216,6 +216,20 @@ int snd_sfx_play_chn_ex(int chn, sfxhnd_t idx, int vol, int pan, uint32_t freq, 
 */
 void snd_sfx_volume( int chn, int vol );
 
+/** \brief  Change the volume of a playing sound channel.
+
+    This function updates the volume of the specified channel of sound. 
+    It does no checking to make sure that a sound effect is playing on the channel
+    specified, and thus can be used even if you're using the channel for some
+    other purpose than sound effects.
+
+    \param  chn             The channel to affect.
+    \param  pan             The panning value of the sound effect. 0 is all the
+                            way to the left, 128 is center, 255 is all the way
+                            to the right.
+*/
+void snd_sfx_pan( int chn, int pan );
+
 
 /** \brief  Stop a single channel of sound.
 
