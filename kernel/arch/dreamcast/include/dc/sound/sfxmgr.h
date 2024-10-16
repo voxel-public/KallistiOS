@@ -230,6 +230,17 @@ void snd_sfx_volume( int chn, int vol );
 */
 void snd_sfx_pan( int chn, int pan );
 
+/** \brief  Change the frequency of a playing sound channel.
+
+    This function updates the playback frequency of the specified channel of sound. 
+    It does no checking to make sure that a sound effect is playing on the channel
+    specified, and thus can be used even if you're using the channel for some
+    other purpose than sound effects.
+
+    \param  chn             The channel to affect.
+    \param  freq            The new frequency of the sound.
+*/
+void snd_sfx_freq( int chn, int freq );
 
 /** \brief  Stop a single channel of sound.
 
