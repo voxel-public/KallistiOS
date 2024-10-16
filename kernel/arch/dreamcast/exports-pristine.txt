@@ -166,6 +166,7 @@ snd_sfx_play_chn_ex
 snd_sfx_stop
 snd_sfx_chn_alloc
 snd_sfx_chn_free
+snd_sfx_volume
 snd_stream_set_callback
 snd_stream_set_callback_direct
 snd_stream_filter_add

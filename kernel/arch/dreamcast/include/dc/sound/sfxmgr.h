@@ -204,6 +204,19 @@ int snd_sfx_play_chn(int chn, sfxhnd_t idx, int vol, int pan);
 */
 int snd_sfx_play_chn_ex(int chn, sfxhnd_t idx, int vol, int pan, uint32_t freq, bool is_loop, uint32_t loop_start, uint32_t loop_end);
 
+/** \brief  Change the volume of a playing sound channel.
+
+    This function updates the volume of the specified channel of sound. 
+    It does no checking to make sure that a sound effect is playing on the channel
+    specified, and thus can be used even if you're using the channel for some
+    other purpose than sound effects.
+
+    \param  chn             The channel to affect.
+    \param  vol             The volume to play at (between 0 and 255).
+*/
+void snd_sfx_volume( int chn, int vol );
+
+
 /** \brief  Stop a single channel of sound.
 
     This function stops the specified channel of sound from playing. It does no
@@ -240,6 +253,7 @@ int snd_sfx_chn_alloc(void);
     \param  chn             The channel to free.
 */
 void snd_sfx_chn_free(int chn);
+
 
 /** @} */
 

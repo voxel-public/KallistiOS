@@ -21,6 +21,7 @@
 #include <kos/fs.h>
 #include <arch/irq.h>
 #include <dc/spu.h>
+#include <dc/sound/aica_comm.h>
 #include <dc/sound/sound.h>
 #include <dc/sound/sfxmgr.h>
 
@@ -502,7 +503,7 @@ err_occurred:
     return SFXHND_INVALID;
 }
 
-int snd_sfx_play_chn(int chn, sfxhnd_t idx, int vol, int pan){
+    int snd_sfx_play_chn(int chn, sfxhnd_t idx, int vol, int pan){
     return snd_sfx_play_chn_ex( chn, idx, vol, pan, 0, false, 0, 0 );
 }
 
@@ -636,4 +637,15 @@ void snd_sfx_chn_free(int chn) {
     old = irq_disable();
     sfx_inuse &= ~(1ULL << chn);
     irq_restore(old);
+}
+
+void snd_sfx_volume( int chn, int vol ){
+    AICA_CMDSTR_CHANNEL(tmp, cmd, chan);
+    cmd->cmd = AICA_CMD_CHAN;
+    cmd->timestamp = 0;
+    cmd->size = AICA_CMDSTR_CHANNEL_SIZE;
+    cmd->cmd_id = chn;
+    chan->cmd = AICA_CH_CMD_UPDATE | AICA_CH_UPDATE_SET_VOL;
+    chan->vol = vol;
+    snd_sh4_to_aica(tmp, cmd->size);
 }
